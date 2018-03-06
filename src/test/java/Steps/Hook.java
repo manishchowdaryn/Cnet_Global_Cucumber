@@ -1,9 +1,4 @@
-package Steps;
-
-import Base.BaseUtil;
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+package steps;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,10 +9,18 @@ import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+
+import com.cucumber.listener.Reporter;
+import com.google.common.io.Files;
+
+import Base.BaseUtil;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+import listener.ExtentProperties;
 
 public class Hook extends BaseUtil{
 
@@ -44,13 +47,17 @@ public class Hook extends BaseUtil{
 		String browserName = prop.getProperty("BrowserName");
 		System.out.println(browserName);
 		System.out.println(prop.getProperty("BaseURL"));
+		Reporter.assignAuthor("Maneesh Nama");
 		
+		ExtentProperties extentProperties = ExtentProperties.INSTANCE;
+        extentProperties.getReportPath();
+        
 		if(browserName.equalsIgnoreCase("FireFox")){
 			 File file = new File("driver//geckodriver.exe");
 			 System.setProperty("webdriver.firefox.marionette", file.getAbsolutePath());
 			 base.driver = new FirefoxDriver();
 			 base.driver.manage().window().maximize();
-			
+			 		
 		} else if(browserName.equalsIgnoreCase("Chrome")){
 			 File file = new File("driver//chromedriver.exe");
 			 System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
@@ -71,26 +78,34 @@ public class Hook extends BaseUtil{
         
     }
 
-    public static String getScenarioName() {
-		 return scenarioName;
-	 }
-
-    @After
-    public void TearDownTest(Scenario scenario) {
-        if (scenario.isFailed()) {
-            System.out.print("On Failure Test Method");
-            TakesScreenshot scrShot =((TakesScreenshot)base.driver);
-            File source = scrShot.getScreenshotAs(OutputType.FILE);
-            File destination = new File("screen-shots\\"+ getScenarioName()+"\\"+ getScenarioName()+".png");
-            try {
-    			FileUtils.copyFile(source, destination);
-    		} catch (IOException e) {
-    			e.printStackTrace();
-    		}
-            System.out.print("Screenshot taken");
-        }
-        base.driver.close();
-        System.out.println("Closing the browser");
-    }
-
+    @After(order = 1)
+	public void afterScenario(Scenario scenario) {
+		
+    	if (scenario.isFailed()) {
+			String screenshotName = scenario.getName().replaceAll(" ", "_");
+			try {
+				//This takes a screenshot from the driver at save it to the specified location
+				File sourcePath = ((TakesScreenshot) base.driver).getScreenshotAs(OutputType.FILE);
+				
+				//Building up the destination path for the screenshot to save
+				//Also make sure to create a folder 'screenshots' with in the Extent-report folder
+				File destinationPath = new File(System.getProperty("user.dir") + "/ExtentReport/screenshots/" + screenshotName + ".png");
+				
+				//Copy taken screenshot from source location to destination location
+				Files.copy(sourcePath, destinationPath);   
+ 
+				//This attach the specified screenshot to the test
+				Reporter.addScreenCaptureFromPath(destinationPath.toString());
+			} catch (IOException e) {
+			
+			} 
+		}
+	}
+	
+	
+	@After(order = 0)
+	public void AfterSteps() {
+		base.driver.quit();
+	}
+	
 }

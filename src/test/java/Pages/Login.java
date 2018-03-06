@@ -18,7 +18,7 @@ public class Login extends BaseUtil{
     
        }
        
-       @FindBy(how = How.ID, using = "gsft_main")
+        @FindBy(how = How.ID, using = "gsft_main")
 	    public WebElement switch_to_Main_frame;
        
 	    @FindBy(how = How.ID, using = "user_name")
