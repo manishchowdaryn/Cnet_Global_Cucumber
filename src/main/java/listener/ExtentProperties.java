@@ -13,11 +13,12 @@ public enum ExtentProperties {
     private String extentXServerUrl;
     private String projectName;
     
+   
+    SimpleDateFormat ft = new SimpleDateFormat ("HH-mm-ss");
     Date dNow = new Date( );
-    SimpleDateFormat ft = new SimpleDateFormat ("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
-	
+    
     ExtentProperties() {
-        this.reportPath = "output" + File.separator + "Run_" + ft.format(dNow) + File.separator
+        this.reportPath = "ExtentReport" + File.separator + "Run_" + ft.format(dNow) + File.separator
                 + "report.html";
         this.projectName = "default";
     }

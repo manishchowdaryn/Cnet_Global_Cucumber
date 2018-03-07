@@ -2,23 +2,26 @@ package steps;
 
 import static org.testng.Assert.assertEquals;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
-
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import Base.BaseUtil;
 import Pages.ChooseOptions;
 import Pages.DescribeNeeds;
@@ -26,12 +29,17 @@ import Pages.FilterNavigation;
 import Pages.Login;
 import Pages.Logout;
 import Pages.RequestProcess;
+import cucumber.api.Scenario;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import listener.Reporter;
 
 public class EndToEndDeploymentStep extends BaseUtil{
 
+	static String folderName;
+	
+	public static String scenarioName;
     public BaseUtil base;
     public Login Login;
     public Logout Logout;
@@ -56,22 +64,31 @@ public class EndToEndDeploymentStep extends BaseUtil{
      
      @Given("^Launch Browser and Navigate to CNet URL$")
      public void launch_Browser_and_Navigate_to_CNet_URL() throws Throwable {
-    	 	input = new FileInputStream("resources//config//configuration.properties");
-	 		prop.load(input);
-	 		base.driver.manage().window().maximize();
-	 		base.driver.get(prop.getProperty("BaseURL"));
+    	input = new FileInputStream("resources//config//configuration.properties");
+ 		prop.load(input);
+ 		File file = new File("driver//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+		base.driver = new ChromeDriver();
+		base.driver.manage().window().maximize();
+ 		base.driver.get(prop.getProperty("BaseURL"));
+ 		Reporter.addStepLog("Launch CNet URL");
+ 		Reporter.addScenarioLog("Launched Successfully");
+ 		folderName = Reporter.createFolder();
+ 		int i= Reporter.takescreenshot();
+ 		Reporter.addScreenCaptureFromPath(System.getProperty("user.dir") + "/ScreenShots" + folderName +"/Screenshot"+i+".jpg", "CNET URL");
      }
 
      @Then("^Switch to MainFrame$")
      public void switch_to_MainFrame() throws Throwable {
-    	 
     	 base.driver.switchTo().frame(Login.switch_to_Main_frame());
+
      }
 
      @Then("^Verify whether Login page is correctly opened or not$")
      public void verify_whether_Login_page_is_correctly_opened_or_not() throws Throwable {
     	 String loginPageTitle = base.driver.getTitle();
     	 assertEquals("ServiceNow", loginPageTitle);
+  
      }
 
      @When("^Enter Username and Password as \"([^\"]*)\" and \"([^\"]*)\"$")
@@ -81,12 +98,14 @@ public class EndToEndDeploymentStep extends BaseUtil{
  	   	Login.passwordLocator().clear();
  	   	Login.passwordLocator().sendKeys(Password);
  	   	Login.loginButton().click();
+ 	   
      }
 
      @Then("^Verify whether Home page is correctly opened or not$")
      public void verify_whether_Home_page_is_correctly_opened_or_not() throws Throwable {
     	 String homePageTitle = base.driver.getTitle();
 		 assertEquals("Home page loading... | ServiceNow", homePageTitle);
+		 
      }
      
      @When("^Enter Value in Filter Navigation Field Text Box \"([^\"]*)\"$")
@@ -96,6 +115,7 @@ public class EndToEndDeploymentStep extends BaseUtil{
      	searchFilter.clear();
      	searchFilter.sendKeys(searchFilterValue);
      	Thread.sleep(3000);
+     	
      }
      
      @When("^Click on Service Catalog Order Guides Link$")
@@ -112,6 +132,7 @@ public class EndToEndDeploymentStep extends BaseUtil{
      	WebElement endToEndDeployment = wait.until(ExpectedConditions.elementToBeClickable(FilterNavigation.endToEndDeployment()));
      	endToEndDeployment.click();
      	Thread.sleep(3000);
+     	
      }
      
 
@@ -120,13 +141,18 @@ public class EndToEndDeploymentStep extends BaseUtil{
     	WebDriverWait wait = new WebDriverWait(base.driver, 10);
      	WebElement tryIT = wait.until(ExpectedConditions.elementToBeClickable(FilterNavigation.tryIT()));
      	tryIT.click();
+     	Thread.sleep(5000);
      }
+     
+
      
      @When("^Click On Project LookUP$")
      public void click_On_Project_LookUP() throws Throwable {
     	WebDriverWait wait = new WebDriverWait(base.driver, 10);
      	WebElement projectLookUP = wait.until(ExpectedConditions.elementToBeClickable(DescribeNeeds.projectLookUP()));
      	projectLookUP.click();
+     	//takeScreenShot("DescribePage");
+     	Thread.sleep(5000);
       }
      
      @Then("^Switch to Multiple Window and Select Text as \"([^\"]*)\"$")
@@ -214,7 +240,7 @@ public class EndToEndDeploymentStep extends BaseUtil{
   	 }
 
     @When("^Select Container Platform as \"([^\"]*)\"$")
-    public void select_Container_Platform(String containerPlatform) {
+    public void select_Container_Platform(String containerPlatform) throws Throwable {
   		Select containerPlatformValue = new Select(DescribeNeeds.containerPlatform());
   		containerPlatformValue.selectByVisibleText(containerPlatform);
   	 }
@@ -447,12 +473,13 @@ public class EndToEndDeploymentStep extends BaseUtil{
 	      		
 	      	    base.driver.switchTo().alert().accept();
 	      	    
-	      	    Thread.sleep(2000);
+	      	    Thread.sleep(5000);
 	     
 	      	    Select approveState = new Select(RequestProcess.approveDropdown());
 		      	approveState.selectByVisibleText("Approved");
 		      	
-		      	System.out.println("Entered in to Catch");
+		      	System.out.println("Entered in to Catch");  	
+		    
 	      	}
 	    
 	      	
@@ -461,12 +488,12 @@ public class EndToEndDeploymentStep extends BaseUtil{
 	      	WebElement updateButton = wait.until(ExpectedConditions.elementToBeClickable(RequestProcess.updateButton()));
 	      	updateButton.click();
 	      	
-	      	Thread.sleep(3000);
+	      	Thread.sleep(5000);
 	      	
 	      	WebElement updateButton1 = wait.until(ExpectedConditions.elementToBeClickable(RequestProcess.updateButton()));
 	      	updateButton1.click();
 	    	
-	    	Thread.sleep(3000);
+	    	Thread.sleep(5000);
 	    	
 	    }
 	    
@@ -519,6 +546,9 @@ public class EndToEndDeploymentStep extends BaseUtil{
      	WebElement logoutButton = wait.until(ExpectedConditions.elementToBeClickable(Logout.logouButtont()));
      	logoutButton.click();
      }
-
+     
+     
+     
+     
  
  }

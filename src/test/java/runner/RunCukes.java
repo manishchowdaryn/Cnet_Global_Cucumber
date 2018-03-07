@@ -1,34 +1,40 @@
 package runner;
 
+import java.io.File;
 
 import org.testng.annotations.AfterClass;
-
-import com.cucumber.listener.Reporter;
-
+import org.testng.annotations.BeforeClass;
 import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
+import listener.ExtentProperties;
+import listener.Reporter;
 
-
-@CucumberOptions(features = {"resources/features/EndToEndDeployment.feature"} ,
+@CucumberOptions(features = {"resources/features"} ,
 				 monochrome = true,
 				 glue = "steps",
 				 tags = "@EndToEndDeployment",
-				 plugin= {"html:target/site/cucumber-report-html",
-					      "json:target/cucumber.json",
-					      "pretty:target/cucumber-pretty.txt",
-					      "usage:target/cucumber-usage.json",
-						  "com.cucumber.listener.ExtentCucumberFormatter:ExtentReport/report.html"})
-
-
-
+				 plugin= {"pretty",
+					        "html:target/site/cucumber-report-html",
+					        "json:target/cucumber.json",
+					        "pretty:target/cucumber-pretty.txt",
+					        "usage:target/cucumber-usage.json",
+							"com.cucumber.listener.ExtentCucumberFormatter:"})
 
 public class RunCukes extends AbstractTestNGCucumberTests{
 	
-	@AfterClass
-	public static void writeExtentReport() {
-		Reporter.loadXMLConfig("extent-config.xml");
-	    Reporter.setSystemInfo("User Name", System.getProperty("user.name"));
-	    Reporter.setSystemInfo("Time Zone", System.getProperty("user.timezone"));
+	@BeforeClass
+	public static void Setup(){
+		ExtentProperties extentProperties = ExtentProperties.INSTANCE;
+		extentProperties.getReportPath();
+		
 	}
 	
+	@AfterClass
+	public static void teardown(){
+		Reporter.loadXMLConfig(new File("extent-config.xml"));
+		Reporter.setSystemInfo("user", System.getProperty("user.name"));
+		Reporter.setSystemInfo("os", "Windows 7");
+		
+	}
+
 }
