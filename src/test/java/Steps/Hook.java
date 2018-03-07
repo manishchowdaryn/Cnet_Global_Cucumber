@@ -47,7 +47,7 @@ public class Hook extends BaseUtil{
 		String browserName = prop.getProperty("BrowserName");
 		System.out.println(browserName);
 		System.out.println(prop.getProperty("BaseURL"));
-		Reporter.assignAuthor("Maneesh Nama");
+		//Reporter.assignAuthor("Maneesh Nama");
 		
 		ExtentProperties extentProperties = ExtentProperties.INSTANCE;
         extentProperties.getReportPath();

@@ -77,13 +77,9 @@ Feature: CNet Global EndToEndDeployment Scenario
     When Click on RITM Numbers and Approve all RITM Numbers for the Request Created
     Then Switch to Multiple Window
     When Search Request in a CMDB Table as "cmdb_ci_server.list"
-    
-     
-    
-    
-    When Click on User Menu Dropdown
+   	#When Click on User Menu Dropdown
     And Click on Logout
 
     Examples: 
       | Username  |  | Password |
-      | test.user |  | test     |
+      | test.user |  | test1     |
