@@ -1,94 +1,49 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>Cucumber_Selenium</groupId>
-  <artifactId>CNET_Global</artifactId>
+
+  <groupId>CNET_GLOBAL</groupId>
+  <artifactId>com.cnet</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
-  <name>CNET_Global</name>
+  <packaging>jar</packaging>
+
+  <name>com.cnet</name>
   <url>http://maven.apache.org</url>
-  
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <cucumber.version>1.2.5</cucumber.version>
-    <extentreports.version>3.0.6</extentreports.version>
+     <extentreports.version>3.0.6</extentreports.version>
   </properties>
 
   <dependencies>
-  	<dependency>
-	    <groupId>info.cukes</groupId>
-	    <artifactId>cucumber-junit</artifactId>
-	    <version>1.2.5</version>
-	    <scope>test</scope>
-	</dependency>
-	
-	<dependency>
-    <groupId>ru.yandex.qatools.ashot</groupId>
-    <artifactId>ashot</artifactId>
-    <version>1.5.4</version>
-</dependency>
 
-	<dependency>
-    <groupId>ru.yandex.qatools.ashot</groupId>
-    <artifactId>ashot</artifactId>
-    <version>1.1</version>
-</dependency>
-
-	<dependency>
-    <groupId>ru.yandex.qatools.ashot</groupId>
-    <artifactId>ashot</artifactId>
-    <version>1.4.10</version>
-</dependency>
-
-	<dependency>
-	    <groupId>info.cukes</groupId>
-	    <artifactId>cucumber-java</artifactId>
-	    <version>1.2.5</version>
-	</dependency>
-	
-	<dependency>
-	    <groupId>info.cukes</groupId>
-	    <artifactId>cucumber-testng</artifactId>
-	    <version>1.1.5</version>
-	</dependency>
-	<dependency>
-	    <groupId>junit</groupId>
-	    <artifactId>junit</artifactId>
-	    <version>4.12</version>
-	    <scope>test</scope>
-	</dependency>
-	
-	<dependency>
-        <groupId>org.seleniumhq.selenium</groupId>
-        <artifactId>selenium-java</artifactId>
-        <version>3.6.0</version>
-    </dependency>
-    <dependency>
-	    <groupId>org.seleniumhq.selenium</groupId>
-	    <artifactId>selenium-chrome-driver</artifactId>
-	    <version>3.6.0</version>
-	</dependency>
-	
-	<dependency>
-	    <groupId>log4j</groupId>
-	    <artifactId>log4j</artifactId>
-	    <version>1.2.17</version>
-	</dependency>
-	<!-- <dependency>
-	    <groupId>org.apache.poi</groupId>
-	    <artifactId>poi</artifactId>
-	    <version>3.17-beta1</version>
-	</dependency>
-	<dependency>
-	    <groupId>org.apache.poi</groupId>
-	    <artifactId>poi-ooxml</artifactId>
-	    <version>3.17-beta1</version>
-	</dependency>
-	 -->
 		<dependency>
-		    <groupId>com.vimalselvam</groupId>
-		    <artifactId>cucumber-extentsreport</artifactId>
-		    <version>3.0.1</version>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.8.1</version>
 		</dependency>
+	
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>1.2.5</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>1.2.5</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
+		<dependency>
+		    <groupId>net.masterthought</groupId>
+		    <artifactId>maven-cucumber-reporting</artifactId>
+		    <version>3.12.0</version>
+		</dependency>
+		
 		
 		<dependency>
 			<groupId>info.cukes</groupId>
@@ -96,7 +51,36 @@
 			<version>1.2.5</version>
 			<scope>test</scope>
 		</dependency>
+	
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>1.2.5</version>
+		</dependency>
 		
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-remote-driver</artifactId>
+			<version>3.8.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>3.8.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.9.10</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.vimalselvam</groupId>
+		    <artifactId>cucumber-extentsreport</artifactId>
+		    <version>3.0.1</version>
+		</dependency>
 		
 		<dependency>
 		            <groupId>com.aventstack</groupId>
@@ -104,47 +88,16 @@
 		<version>${extentreports.version}</version>
 		<scope>provided</scope>
 		</dependency>
-		<dependency>
-		    <groupId>org.jsoup</groupId>
-		    <artifactId>jsoup</artifactId>
-		    <version>1.8.3</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.xerial</groupId>
-		    <artifactId>sqlite-jdbc</artifactId>
-		    <version>3.8.11.1</version>
-		</dependency>
-		<!-- <dependency>
-		    <groupId>org.freemarker</groupId>
-		    <artifactId>freemarker</artifactId>
-		    <version>2.3.23</version>
-		</dependency> -->
-		<dependency>
-		    <groupId>commons-io</groupId>
-		    <artifactId>commons-io</artifactId>
-		    <version>2.5</version>
-		</dependency>
-		
-		<dependency>
-		    <groupId>net.masterthought</groupId>
-		    <artifactId>maven-cucumber-reporting</artifactId>
-		    <version>3.12.0</version>
-		</dependency>
 		
 		<dependency>
 		    <groupId>com.relevantcodes</groupId>
 		    <artifactId>extentreports</artifactId>
 		    <version>2.41.0</version>
 		</dependency>
-		<!-- <dependency>
-		    <groupId>org.mongodb</groupId>
-		    <artifactId>mongodb-driver</artifactId>
-		    <version>3.0.4</version>
-		</dependency>
-		 -->
-  </dependencies>
-  
-	<build>
+		
+	</dependencies>
+
+<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

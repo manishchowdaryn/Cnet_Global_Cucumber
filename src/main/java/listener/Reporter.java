@@ -11,8 +11,6 @@ import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,12 +21,6 @@ import javax.imageio.ImageIO;
  * This class houses few utilities required for the report
  */
 public class Reporter {
-	
-	static int counter = 0;
-	static String folderName;
-	
-	static SimpleDateFormat ft = new SimpleDateFormat ("HH-mm-ss");
-    static Date dNow = new Date( );
     private static Map<String, Boolean> systemInfoKeyMap = new HashMap<>();
 
     private Reporter() {
@@ -171,25 +163,13 @@ public class Reporter {
         return ExtentCucumberFormatter.scenarioThreadLocal.get();
     }
     
-    public static int takescreenshot() throws IOException, AWTException {
+    public static void takescreenshot() throws IOException, AWTException {
     	 Robot robot = new Robot();
-    	 counter = counter+1;
     	 Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
     	 BufferedImage screenFullImage = robot.createScreenCapture(screenRect);
-    	 ImageIO.write(screenFullImage, "JPG", new File(System.getProperty("user.dir") + "/ScreenShots" + folderName +"//Screenshot"+counter+".jpg"));;
-    	 return counter;
+    	 //ImageIO.write(screenFullImage, "JPG", new File(Screenshot.INSTANCE.getScreenshotPath()));
+    	 ImageIO.write(screenFullImage, "JPG", new File("E:\\SELENIUM_PROJECT_SUPPORT\\MANISH_CHOWDARY\\workspace\\CNET_Global\\FailedTestCases\\failure.jpg"));
     	
-    }
-    
-    public static String createFolder(){
-    	folderName = ft.format(dNow);
-    	folderName = folderName.replace(":", "_");
-    	String Path = System.getProperty("user.dir")+ "/ScreenShots/";
-    	File dir = new File(Path+"//"+folderName);
-    	if(!dir.exists()){
-    		dir.mkdir();
-    	}
-    	return folderName;
     }
 
 }
