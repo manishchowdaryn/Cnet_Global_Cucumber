@@ -18,9 +18,17 @@ public class DescribeNeeds {
  
     	}
     
+		
+		@FindBy(how = How.LINK_TEXT, using = "Describe Needs")
+	    public WebElement describeNeedsText;
+		
      	@FindBy(how = How.XPATH, using = ".//*[@id='lookup.IO:66e3d41edbf20300a68fda11cf9619d5']")
 	    public WebElement projectLookUP;
-         	
+         
+     	
+     	
+     	
+     	
      	@FindBy(how = How.ID, using = "IO:67c22786db720300a68fda11cf961921")
 	    public WebElement environmentInformation;
      	
@@ -63,7 +71,11 @@ public class DescribeNeeds {
      	@FindBy(how = How.XPATH, using = ".//*[@id='next_page']")
 	    public WebElement chooseOptions;
      	
-     
+
+     	public WebElement describeNeedsText() {
+			return describeNeedsText;
+		}
+     	
      	
 	    public WebElement projectLookUP() {
 			return projectLookUP;

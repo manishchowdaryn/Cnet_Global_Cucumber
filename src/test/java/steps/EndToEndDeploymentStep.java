@@ -35,6 +35,7 @@ import Pages.RequestProcess;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import junit.framework.Assert;
 
 public class EndToEndDeploymentStep extends BaseUtil{
 
@@ -69,14 +70,11 @@ public class EndToEndDeploymentStep extends BaseUtil{
 	 		
 	 		//This takes a screenshot from the driver at save it to the specified location
 			File sourcePath = ((TakesScreenshot) base.driver).getScreenshotAs(OutputType.FILE);
-			
 			//Building up the destination path for the screenshot to save
 			//Also make sure to create a folder 'screenshots' with in the Extent-report folder
 			File destinationPath = new File(System.getProperty("user.dir") + "/ExtentReport/screenshots/" + "BaseURL" + ".png");
-			
 			//Copy taken screenshot from source location to destination location
-			Files.copy(sourcePath, destinationPath);   
-
+			Files.copy(sourcePath, destinationPath); 
 			//This attach the specified screenshot to the test
 			Reporter.addScreenCaptureFromPath(destinationPath.toString());
      }
@@ -90,22 +88,22 @@ public class EndToEndDeploymentStep extends BaseUtil{
      @Then("^Verify whether Login page is correctly opened or not$")
      public void verify_whether_Login_page_is_correctly_opened_or_not() throws Throwable {
     	 
-    	
-			
-			String loginPageTitle = base.driver.getTitle();
-			
-			//This takes a screenshot from the driver at save it to the specified location
+    	//This takes a screenshot from the driver at save it to the specified location
 			File sourcePath = ((TakesScreenshot) base.driver).getScreenshotAs(OutputType.FILE);
 			
 			//Building up the destination path for the screenshot to save
 			//Also make sure to create a folder 'screenshots' with in the Extent-report folder
-			File destinationPath = new File(System.getProperty("user.dir") + "/ExtentReport/screenshots/" + "Title" + ".png");
+			File destinationPath = new File(System.getProperty("user.dir") + "/ExtentReport/screenshots/" + "BaseURL" + ".png");
 			
 			//Copy taken screenshot from source location to destination location
 			Files.copy(sourcePath, destinationPath);   
 
 			//This attach the specified screenshot to the test
 			Reporter.addScreenCaptureFromPath(destinationPath.toString());
+    	
+			
+			String loginPageTitle = base.driver.getTitle();
+			
 			
 			assertEquals("ServiceNow", loginPageTitle);
     	 
@@ -119,6 +117,15 @@ public class EndToEndDeploymentStep extends BaseUtil{
  	   	Login.passwordLocator().clear();
  	   	Login.passwordLocator().sendKeys(Password);
  	   	Login.loginButton().click();
+ 	 //This takes a screenshot from the driver at save it to the specified location
+		File sourcePath = ((TakesScreenshot) base.driver).getScreenshotAs(OutputType.FILE);
+		//Building up the destination path for the screenshot to save
+		//Also make sure to create a folder 'screenshots' with in the Extent-report folder
+		File destinationPath = new File(System.getProperty("user.dir") + "/ExtentReport/screenshots/" + "Login" + ".png");
+		//Copy taken screenshot from source location to destination location
+		Files.copy(sourcePath, destinationPath); 
+		//This attach the specified screenshot to the test
+		Reporter.addScreenCaptureFromPath(destinationPath.toString());
      }
 
      @Then("^Verify whether Home page is correctly opened or not$")
@@ -134,6 +141,15 @@ public class EndToEndDeploymentStep extends BaseUtil{
      	searchFilter.clear();
      	searchFilter.sendKeys(searchFilterValue);
      	Thread.sleep(3000);
+     	//This takes a screenshot from the driver at save it to the specified location
+		File sourcePath = ((TakesScreenshot) base.driver).getScreenshotAs(OutputType.FILE);
+		//Building up the destination path for the screenshot to save
+		//Also make sure to create a folder 'screenshots' with in the Extent-report folder
+		File destinationPath = new File(System.getProperty("user.dir") + "/ExtentReport/screenshots/" + "Filter" + ".png");
+		//Copy taken screenshot from source location to destination location
+		Files.copy(sourcePath, destinationPath); 
+		//This attach the specified screenshot to the test
+		Reporter.addScreenCaptureFromPath(destinationPath.toString());
      }
      
      @When("^Click on Service Catalog Order Guides Link$")
@@ -150,6 +166,24 @@ public class EndToEndDeploymentStep extends BaseUtil{
      	WebElement endToEndDeployment = wait.until(ExpectedConditions.elementToBeClickable(FilterNavigation.endToEndDeployment()));
      	endToEndDeployment.click();
      	Thread.sleep(3000);
+     	//This takes a screenshot from the driver at save it to the specified location
+		File sourcePath = ((TakesScreenshot) base.driver).getScreenshotAs(OutputType.FILE);
+		//Building up the destination path for the screenshot to save
+		//Also make sure to create a folder 'screenshots' with in the Extent-report folder
+		File destinationPath = new File(System.getProperty("user.dir") + "/ExtentReport/screenshots/" + "EndToEnd" + ".png");
+		//Copy taken screenshot from source location to destination location
+		Files.copy(sourcePath, destinationPath); 
+		//This attach the specified screenshot to the test
+		Reporter.addScreenCaptureFromPath(destinationPath.toString());
+     }
+     
+    
+	@Then("^Verify whether Try It button is enabled or not$")
+     public void verify_Try_It() throws Throwable {
+    	 WebDriverWait wait = new WebDriverWait(base.driver, 10);
+      	WebElement tryIT = wait.until(ExpectedConditions.elementToBeClickable(FilterNavigation.tryIT()));
+      	Boolean status = tryIT.isEnabled();
+      	Assert.assertTrue(true);
      }
      
 
@@ -158,6 +192,18 @@ public class EndToEndDeploymentStep extends BaseUtil{
     	WebDriverWait wait = new WebDriverWait(base.driver, 10);
      	WebElement tryIT = wait.until(ExpectedConditions.elementToBeClickable(FilterNavigation.tryIT()));
      	tryIT.click();
+     }
+     
+     
+     @Then("^Verify whether Describe Needs page is getting displayed or not$")
+     public void verifyDescribeNeeds() throws Throwable {
+    
+    	WebDriverWait wait = new WebDriverWait(base.driver, 10);
+      	WebElement describeNeedsText = wait.until(ExpectedConditions.elementToBeClickable(DescribeNeeds.describeNeedsText()));
+      	String describeNeedsValue = describeNeedsText.getText();
+    	assertEquals(describeNeedsValue, "Describe Needs");
+    	 
+      	
      }
      
      @When("^Click On Project LookUP$")
@@ -288,6 +334,17 @@ public class EndToEndDeploymentStep extends BaseUtil{
      	WebElement chooseOptions = wait.until(ExpectedConditions.elementToBeClickable(DescribeNeeds.chooseOptions()));
      	chooseOptions.click();
      }
+
+     @Then("^Verify whether Choose Options page is getting displayed or not$")
+     public void verifyChooseOptions() throws Throwable {
+    
+    	WebDriverWait wait = new WebDriverWait(base.driver, 10);
+      	WebElement chooseOptions = wait.until(ExpectedConditions.elementToBeClickable(ChooseOptions.chooseOptions()));
+      	String chooseOptionsText = chooseOptions.getText();
+    	assertEquals(chooseOptionsText, "Choose Options");
+    	 
+      	
+     }
      
      @When("^Click On Server Requested LookUP$")
      public void click_On_Server_Requested() throws Throwable {
@@ -415,6 +472,17 @@ public class EndToEndDeploymentStep extends BaseUtil{
       	WebElement checkOut = wait.until(ExpectedConditions.elementToBeClickable(ChooseOptions.checkOut()));
       	checkOut.click();
        }
+      
+      @Then("^Verify whether Shopping Cart page is getting displayed or not$")
+      public void verifyCheckOut() throws Throwable {
+     
+     	WebDriverWait wait = new WebDriverWait(base.driver, 10);
+       	WebElement shoppingCart = wait.until(ExpectedConditions.elementToBeClickable(ChooseOptions.shoppingCart()));
+       	String shoppingCartText = shoppingCart.getText();
+     	assertEquals(shoppingCartText, "Shopping Cart");
+     	 
+       	
+      }
       
       @When("^Click on Order Now$")
       public void click_on_Order_Now() throws Throwable {

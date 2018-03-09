@@ -21,6 +21,9 @@ public class ChooseOptions {
      	@FindBy(how = How.XPATH, using = ".//*[@id='lookup.IO:a23b99e2dbf20300a68fda11cf9619fc']")
 	    public WebElement serviceRequestedLookUp;
          	
+     	@FindBy(how = How.LINK_TEXT, using = "Choose Options")
+	    public WebElement chooseOptions;
+		
      	@FindBy(how = How.XPATH, using = ".//*[@id='IO:4de538f5db541300f69ff11ebf961976']")
 	    public WebElement clusterName;
      	
@@ -82,9 +85,19 @@ public class ChooseOptions {
 	    public WebElement getRequestNumber;
      	
      	
+     	@FindBy(how = How.XPATH, using = ".//*[@id='sc_cart.do']/table/tbody/tr/td[2]/div")
+	    public WebElement shoppingCart;
      	
      	
+     	public WebElement shoppingCart() {
+			return shoppingCart;
+		}
+     	    
      	
+     	
+     	public WebElement chooseOptions() {
+			return chooseOptions;
+		}
      	     
 	    public WebElement serviceRequestedLookUp() {
 			return serviceRequestedLookUp;

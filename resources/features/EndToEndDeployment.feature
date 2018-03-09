@@ -8,11 +8,13 @@ Feature: CNet Global EndToEndDeployment Scenario
     And Verify whether Login page is correctly opened or not
     When Enter Username and Password as "<Username>" and "<Password>"
     Then Verify whether Home page is correctly opened or not
-    #When Enter Value in Filter Navigation Field Text Box "Service Catalog - Order Guides"
+    When Enter Value in Filter Navigation Field Text Box "Service Catalog - Order Guides"
     And Click on Service Catalog Order Guides Link
     Then Switch to MainFrame
     When Click on End To End Deployment
+    Then Verify whether Try It button is enabled or not
     When Click on Try It
+    Then Verify whether Describe Needs page is getting displayed or not
     And Click On Project LookUP
     Then Switch to Multiple Window and Select Text as "PRJ0010001"
     Then Switch to MainFrame
@@ -34,6 +36,7 @@ Feature: CNet Global EndToEndDeployment Scenario
     When Select Database Type as "Yes"
     When Select Database Container Platform as "Kubernetes"
     And Click on Choose Options
+    Then Verify whether Choose Options page is getting displayed or not
     When Click On Server Requested LookUP
     Then Switch to Multiple Window and Select Text as "Weblogic"
     Then Switch to MainFrame
@@ -70,6 +73,7 @@ Feature: CNet Global EndToEndDeployment Scenario
     Then Switch to MainFrame
     When Click On Next Tab
     When Click On Check Out
+    Then Verify whether Shopping Cart page is getting displayed or not
     When Click on Order Now
     Then Validate Successful Message is displayed or not
     When Get the Request Number after created
@@ -86,4 +90,4 @@ Feature: CNet Global EndToEndDeployment Scenario
 
     Examples: 
       | Username  |  | Password |
-      | test.user |  | test1     |
+      | test.user |  | test     |
