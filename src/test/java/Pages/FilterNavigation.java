@@ -24,7 +24,7 @@ public class FilterNavigation {
      	@FindBy(how = How.ID, using = "nav_filter_controls")
 	    public WebElement searchFilterClick;
      	
-     	@FindBy(how = How.XPATH, using = ".//*[@id='gsft_nav']/div/magellan-favorites-list/div/div[2]/div/a/div[2]/span")
+     	@FindBy(how = How.XPATH, using = "//a[@id='32ce5bb37f000001019feb946298246d']")
 	    public WebElement serviceCatalogOrderGuide;
     
      	@FindBy(how = How.LINK_TEXT, using = "End to End Deployment")

@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import com.cucumber.listener.ExtentProperties;
 import com.cucumber.listener.Reporter;
 import com.google.common.io.Files;
 
@@ -20,7 +21,6 @@ import Base.BaseUtil;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import listener.ExtentProperties;
 
 public class Hook extends BaseUtil{
 
@@ -47,11 +47,15 @@ public class Hook extends BaseUtil{
 		String browserName = prop.getProperty("BrowserName");
 		System.out.println(browserName);
 		System.out.println(prop.getProperty("BaseURL"));
+		/*Reporter.assignAuthor("Maneesh Nama");
 		
+		ExtentProperties extentProperties = ExtentProperties.INSTANCE;
+        extentProperties.getReportPath();*/
 		
 		ExtentProperties extentProperties = ExtentProperties.INSTANCE;
         extentProperties.getReportPath();
-        Reporter.assignAuthor("Maneesh Nama");
+        Reporter.setSystemInfo("user", System.getProperty("user.name"));
+		
         
 		if(browserName.equalsIgnoreCase("FireFox")){
 			 File file = new File("driver//geckodriver.exe");
