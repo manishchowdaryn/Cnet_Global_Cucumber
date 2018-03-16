@@ -10,7 +10,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 
-@CucumberOptions(features = {"resources/features/EndToEndDeployment.feature"} ,
+@CucumberOptions(features = {"resources/features"} ,
 				 monochrome = true,
 				 glue = "steps",
 				 tags = "@EndToEndDeployment",
@@ -21,6 +21,14 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 						  "com.cucumber.listener.ExtentCucumberFormatter:"})
 
 public class RunCukes extends AbstractTestNGCucumberTests{
+	
+	
+	// End to end
+	
+	// End tot end2
+	
+	// abc
+	
 	
 	/*@BeforeClass
     public static void setup() {

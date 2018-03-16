@@ -1,6 +1,7 @@
 package com.cucumber.listener;
 
 import java.io.File;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,7 +15,7 @@ public enum ExtentProperties {
     private String extentXServerUrl;
     private String projectName;
     
-    SimpleDateFormat dateFormat = new SimpleDateFormat("HH_mm_ss");
+    SimpleDateFormat dateFormat = new SimpleDateFormat("_yyyy-MM-dd_HH_mm_ss");
     Date date = new Date();
    
     ExtentProperties() {

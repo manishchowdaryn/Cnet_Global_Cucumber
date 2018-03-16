@@ -26,7 +26,7 @@ public class Reporter {
 	static int counter = 0;
 	static String folderName;
 	
-	static SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+	static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
     static Date date = new Date();
     
 	private static Map<String, Boolean> systemInfoKeyMap = new HashMap<>();
