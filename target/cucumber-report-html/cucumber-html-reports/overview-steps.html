@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber-JVM Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber-JVM Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid" id="build-info">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-1">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Project</th>
+                          <th>Number</th>
+                        <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="info">
+            <td>CNET GLOBAL</td>
+                          <td>1</td>
+                        <td>15 Mar 2018, 13:12</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <h2>Steps Statistics</h2>
+              <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+          </div>
+  </div>
+</div>
+
+<div class="container-fluid" id="summary">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Duration</th>
+            <th>Average</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.HandleMultipleWindows(String)</td>
+              <td>12</td>
+              <td class="duration" data-value="13282545432">13s 282ms</td>
+              <td class="duration" data-value="1106878786">1s 106ms</td>
+              <td class="failed">58.33%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Check_Out()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Choose_Options()</td>
+              <td>1</td>
+              <td class="duration" data-value="6417501910">6s 417ms</td>
+              <td class="duration" data-value="6417501910">6s 417ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Cloud_Platform()</td>
+              <td>1</td>
+              <td class="duration" data-value="1041304961">1s 041ms</td>
+              <td class="duration" data-value="1041304961">1s 041ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Database_Network_Configuration_Group()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Database_Operating_System()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Database_Security_Group()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Database_Service_Requested()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_End_To_End_Deployment()</td>
+              <td>1</td>
+              <td class="duration" data-value="10588520312">10s 588ms</td>
+              <td class="duration" data-value="10588520312">10s 588ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Next_Tab()</td>
+              <td>2</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Operating_System()</td>
+              <td>1</td>
+              <td class="duration" data-value="600832471">600ms</td>
+              <td class="duration" data-value="600832471">600ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Project_LookUP()</td>
+              <td>1</td>
+              <td class="duration" data-value="1764839914">1s 764ms</td>
+              <td class="duration" data-value="1764839914">1s 764ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Request_Number()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Security_Group()</td>
+              <td>1</td>
+              <td class="duration" data-value="602874946">602ms</td>
+              <td class="duration" data-value="602874946">602ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Select_Key_Pair()</td>
+              <td>1</td>
+              <td class="duration" data-value="564252232">564ms</td>
+              <td class="duration" data-value="564252232">564ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Select_Network()</td>
+              <td>1</td>
+              <td class="duration" data-value="557797223">557ms</td>
+              <td class="duration" data-value="557797223">557ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Server_Requested()</td>
+              <td>1</td>
+              <td class="duration" data-value="1416686375">1s 416ms</td>
+              <td class="duration" data-value="1416686375">1s 416ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Server_Size()</td>
+              <td>1</td>
+              <td class="duration" data-value="506633127">506ms</td>
+              <td class="duration" data-value="506633127">506ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Service_Catalog_Order_Guides_Link()</td>
+              <td>1</td>
+              <td class="duration" data-value="8284433952">8s 284ms</td>
+              <td class="duration" data-value="8284433952">8s 284ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_On_Try_It()</td>
+              <td>1</td>
+              <td class="duration" data-value="4446035840">4s 446ms</td>
+              <td class="duration" data-value="4446035840">4s 446ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_RITM_Numbers()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.click_on_Order_Now()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.enter_Cluster_Name(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="838525979">838ms</td>
+              <td class="duration" data-value="838525979">838ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.enter_Database_Cluster_Name(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.enter_Value_in_Filter_navigation_Field_Text_Box(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="690665041">690ms</td>
+              <td class="duration" data-value="690665041">690ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.environmentDropdown(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="406201154">406ms</td>
+              <td class="duration" data-value="406201154">406ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.environmentName(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="737313110">737ms</td>
+              <td class="duration" data-value="737313110">737ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.get_Request_Number()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.search_Request_CMDB(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.select_Application_Type(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="372691470">372ms</td>
+              <td class="duration" data-value="372691470">372ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.select_Container_Platform(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="625028279">625ms</td>
+              <td class="duration" data-value="625028279">625ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.select_Database_Container_Platform(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="380840844">380ms</td>
+              <td class="duration" data-value="380840844">380ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.select_Database_Network_Configuration_Checkbox()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.select_Database_Security_Group_Checkbox()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.select_Database_Server()</td>
+              <td>1</td>
+              <td class="duration" data-value="433712990">433ms</td>
+              <td class="duration" data-value="433712990">433ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.select_Database_Type(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="343843215">343ms</td>
+              <td class="duration" data-value="343843215">343ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.select_Existing_Key_Pair()</td>
+              <td>1</td>
+              <td class="duration" data-value="444660077">444ms</td>
+              <td class="duration" data-value="444660077">444ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.select_Existing_Network_Checkbox()</td>
+              <td>1</td>
+              <td class="duration" data-value="222492120">222ms</td>
+              <td class="duration" data-value="222492120">222ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.select_Security_Group_Checkbox()</td>
+              <td>1</td>
+              <td class="duration" data-value="406357248">406ms</td>
+              <td class="duration" data-value="406357248">406ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.select_WebServer()</td>
+              <td>1</td>
+              <td class="duration" data-value="393017864">393ms</td>
+              <td class="duration" data-value="393017864">393ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.select_webServer_Type(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="362958493">362ms</td>
+              <td class="duration" data-value="362958493">362ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.switchToMultipleWindow()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.typeOfEnvironment(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="378705568">378ms</td>
+              <td class="duration" data-value="378705568">378ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.validate_Successful_Message()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.verifyCheckOut()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.verifyChooseOptions()</td>
+              <td>1</td>
+              <td class="duration" data-value="307371600">307ms</td>
+              <td class="duration" data-value="307371600">307ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.verifyDescribeNeeds()</td>
+              <td>1</td>
+              <td class="duration" data-value="471775906">471ms</td>
+              <td class="duration" data-value="471775906">471ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">EndToEndDeploymentSteps.verify_Try_It()</td>
+              <td>1</td>
+              <td class="duration" data-value="299830778">299ms</td>
+              <td class="duration" data-value="299830778">299ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Hook.AfterSteps()</td>
+              <td>1</td>
+              <td class="duration" data-value="931379924">931ms</td>
+              <td class="duration" data-value="931379924">931ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Hook.InitializeTest(Scenario)</td>
+              <td>1</td>
+              <td class="duration" data-value="6874051197">6s 874ms</td>
+              <td class="duration" data-value="6874051197">6s 874ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReusableSteps.click_on_Logout()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReusableSteps.click_on_User_Menu_Dropdown()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="duration" data-value="0">000ms</td>
+              <td class="failed">0.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReusableSteps.enter_Username_and_Password_as_and(String,String)</td>
+              <td>1</td>
+              <td class="duration" data-value="6571949149">6s 571ms</td>
+              <td class="duration" data-value="6571949149">6s 571ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReusableSteps.launch_Browser_and_Navigate_to_CNet_URL()</td>
+              <td>1</td>
+              <td class="duration" data-value="9311941510">9s 311ms</td>
+              <td class="duration" data-value="9311941510">9s 311ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReusableSteps.switch_to_MainFrame()</td>
+              <td>14</td>
+              <td class="duration" data-value="2773223216">2s 773ms</td>
+              <td class="duration" data-value="198087372">198ms</td>
+              <td class="failed">64.29%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReusableSteps.verify_whether_Home_page_is_correctly_opened_or_not()</td>
+              <td>1</td>
+              <td class="duration" data-value="2668403084">2s 668ms</td>
+              <td class="duration" data-value="2668403084">2s 668ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">ReusableSteps.verify_whether_Login_page_is_correctly_opened_or_not()</td>
+              <td>1</td>
+              <td class="duration" data-value="169331735">169ms</td>
+              <td class="duration" data-value="169331735">169ms</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                  </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>57</td>
+            <td>82</td>
+            <td class="duration">1m 27s 490ms</td>
+            <td class="duration">1s 066ms</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>

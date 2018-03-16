@@ -1,0 +1,742 @@
+[
+  {
+    "source": "^Click on Try It$",
+    "steps": [
+      {
+        "name": "Click on Try It",
+        "aggregatedDurations": {
+          "average": 4.44603584,
+          "median": 4.44603584
+        },
+        "durations": [
+          {
+            "duration": 4.44603584,
+            "location": "EndToEndDeployment.feature:16"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Enter Cluster Name as \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Enter Cluster Name as \"Cluster Name\"",
+        "aggregatedDurations": {
+          "average": 0.838525979,
+          "median": 0.838525979
+        },
+        "durations": [
+          {
+            "duration": 0.838525979,
+            "location": "EndToEndDeployment.feature:43"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select Existing Network Checkbox$",
+    "steps": [
+      {
+        "name": "Select Existing Network Checkbox",
+        "aggregatedDurations": {
+          "average": 0.22249212,
+          "median": 0.22249212
+        },
+        "durations": [
+          {
+            "duration": 0.22249212,
+            "location": "EndToEndDeployment.feature:44"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Verify whether Try It button is enabled or not$",
+    "steps": [
+      {
+        "name": "Verify whether Try It button is enabled or not",
+        "aggregatedDurations": {
+          "average": 0.299830778,
+          "median": 0.299830778
+        },
+        "durations": [
+          {
+            "duration": 0.299830778,
+            "location": "EndToEndDeployment.feature:15"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on Choose Options$",
+    "steps": [
+      {
+        "name": "Click on Choose Options",
+        "aggregatedDurations": {
+          "average": 6.41750191,
+          "median": 6.41750191
+        },
+        "durations": [
+          {
+            "duration": 6.41750191,
+            "location": "EndToEndDeployment.feature:38"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click On Security Group$",
+    "steps": [
+      {
+        "name": "Click On Security Group",
+        "aggregatedDurations": {
+          "average": 0.602874946,
+          "median": 0.602874946
+        },
+        "durations": [
+          {
+            "duration": 0.602874946,
+            "location": "EndToEndDeployment.feature:49"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Verify whether Home page is correctly opened or not$",
+    "steps": [
+      {
+        "name": "Verify whether Home page is correctly opened or not",
+        "aggregatedDurations": {
+          "average": 2.668403084,
+          "median": 2.668403084
+        },
+        "durations": [
+          {
+            "duration": 2.668403084,
+            "location": "EndToEndDeployment.feature:10"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click On Operating System LookUP$",
+    "steps": [
+      {
+        "name": "Click On Operating System LookUP",
+        "aggregatedDurations": {
+          "average": 0.600832471,
+          "median": 0.600832471
+        },
+        "durations": [
+          {
+            "duration": 0.600832471,
+            "location": "EndToEndDeployment.feature:52"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select Application Type as \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Select Application Type as \"JAVA\"",
+        "aggregatedDurations": {
+          "average": 0.37269147,
+          "median": 0.37269147
+        },
+        "durations": [
+          {
+            "duration": 0.37269147,
+            "location": "EndToEndDeployment.feature:34"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on Service Catalog Order Guides Link$",
+    "steps": [
+      {
+        "name": "Click on Service Catalog Order Guides Link",
+        "aggregatedDurations": {
+          "average": 8.284433952,
+          "median": 8.284433952
+        },
+        "durations": [
+          {
+            "duration": 8.284433952,
+            "location": "EndToEndDeployment.feature:12"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select Database Server Checkbox$",
+    "steps": [
+      {
+        "name": "Select Database Server Checkbox",
+        "aggregatedDurations": {
+          "average": 0.43371299,
+          "median": 0.43371299
+        },
+        "durations": [
+          {
+            "duration": 0.43371299,
+            "location": "EndToEndDeployment.feature:35"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Select Type of Environment as \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Select Type of Environment as \"Development\"",
+        "aggregatedDurations": {
+          "average": 0.378705568,
+          "median": 0.378705568
+        },
+        "durations": [
+          {
+            "duration": 0.378705568,
+            "location": "EndToEndDeployment.feature:22"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Select Environment Information as \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Select Environment Information as \"Create Environment - New\"",
+        "aggregatedDurations": {
+          "average": 0.406201154,
+          "median": 0.406201154
+        },
+        "durations": [
+          {
+            "duration": 0.406201154,
+            "location": "EndToEndDeployment.feature:21"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Switch to Multiple Window and Select Text as \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Switch to Multiple Window and Select Text as \"PRJ0010001\"",
+        "aggregatedDurations": {
+          "average": 1.659873953,
+          "median": 1.659873953
+        },
+        "durations": [
+          {
+            "duration": 1.659873953,
+            "location": "EndToEndDeployment.feature:19"
+          }
+        ]
+      },
+      {
+        "name": "Switch to Multiple Window and Select Text as \"AWS_New York\"",
+        "aggregatedDurations": {
+          "average": 1.643761662,
+          "median": 1.643761662
+        },
+        "durations": [
+          {
+            "duration": 1.643761662,
+            "location": "EndToEndDeployment.feature:25"
+          }
+        ]
+      },
+      {
+        "name": "Switch to Multiple Window and Select Text as \"qa\"",
+        "aggregatedDurations": {
+          "average": 1.622510252,
+          "median": 1.622510252
+        },
+        "durations": [
+          {
+            "duration": 1.622510252,
+            "location": "EndToEndDeployment.feature:29"
+          }
+        ]
+      },
+      {
+        "name": "Switch to Multiple Window and Select Text as \"Weblogic\"",
+        "aggregatedDurations": {
+          "average": 2.332860633,
+          "median": 2.332860633
+        },
+        "durations": [
+          {
+            "duration": 2.332860633,
+            "location": "EndToEndDeployment.feature:41"
+          }
+        ]
+      },
+      {
+        "name": "Switch to Multiple Window and Select Text as \"vpc-f7c3d993\"",
+        "aggregatedDurations": {
+          "average": 2.184699909,
+          "median": 2.184699909
+        },
+        "durations": [
+          {
+            "duration": 2.184699909,
+            "location": "EndToEndDeployment.feature:46"
+          }
+        ]
+      },
+      {
+        "name": "Switch to Multiple Window and Select Text as \"(empty)\"",
+        "aggregatedDurations": {
+          "average": 2.178128578,
+          "median": 2.178128578
+        },
+        "durations": [
+          {
+            "duration": 2.178128578,
+            "location": "EndToEndDeployment.feature:50"
+          }
+        ]
+      },
+      {
+        "name": "Switch to Multiple Window and Select Text as \"RHEL 7\"",
+        "aggregatedDurations": {
+          "average": 1.660710445,
+          "median": 1.660710445
+        },
+        "durations": [
+          {
+            "duration": 1.660710445,
+            "location": "EndToEndDeployment.feature:53"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select Database Container Platform as \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Select Database Container Platform as \"Kubernetes\"",
+        "aggregatedDurations": {
+          "average": 0.380840844,
+          "median": 0.380840844
+        },
+        "durations": [
+          {
+            "duration": 0.380840844,
+            "location": "EndToEndDeployment.feature:37"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click On Project LookUP$",
+    "steps": [
+      {
+        "name": "Click On Project LookUP",
+        "aggregatedDurations": {
+          "average": 1.764839914,
+          "median": 1.764839914
+        },
+        "durations": [
+          {
+            "duration": 1.764839914,
+            "location": "EndToEndDeployment.feature:18"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click On Server Requested LookUP$",
+    "steps": [
+      {
+        "name": "Click On Server Requested LookUP",
+        "aggregatedDurations": {
+          "average": 1.416686375,
+          "median": 1.416686375
+        },
+        "durations": [
+          {
+            "duration": 1.416686375,
+            "location": "EndToEndDeployment.feature:40"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select Container Platform as \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Select Container Platform as \"Kubernetes\"",
+        "aggregatedDurations": {
+          "average": 0.625028279,
+          "median": 0.625028279
+        },
+        "durations": [
+          {
+            "duration": 0.625028279,
+            "location": "EndToEndDeployment.feature:33"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select Existing Key Pair Checkbox$",
+    "steps": [
+      {
+        "name": "Select Existing Key Pair Checkbox",
+        "aggregatedDurations": {
+          "average": 0.444660077,
+          "median": 0.444660077
+        },
+        "durations": [
+          {
+            "duration": 0.444660077,
+            "location": "EndToEndDeployment.feature:27"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Verify whether Choose Options page is getting displayed or not$",
+    "steps": [
+      {
+        "name": "Verify whether Choose Options page is getting displayed or not",
+        "aggregatedDurations": {
+          "average": 0.3073716,
+          "median": 0.3073716
+        },
+        "durations": [
+          {
+            "duration": 0.3073716,
+            "location": "EndToEndDeployment.feature:39"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Launch Browser and Navigate to CNet URL$",
+    "steps": [
+      {
+        "name": "Launch Browser and Navigate to CNet URL",
+        "aggregatedDurations": {
+          "average": 9.31194151,
+          "median": 9.31194151
+        },
+        "durations": [
+          {
+            "duration": 9.31194151,
+            "location": "EndToEndDeployment.feature:6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Enter Username and Password as \"([^\"]*)\" and \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Enter Username and Password as \"test.user\" and \"test\"",
+        "aggregatedDurations": {
+          "average": 6.571949149,
+          "median": 6.571949149
+        },
+        "durations": [
+          {
+            "duration": 6.571949149,
+            "location": "EndToEndDeployment.feature:9"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click On Select Network$",
+    "steps": [
+      {
+        "name": "Click On Select Network",
+        "aggregatedDurations": {
+          "average": 0.557797223,
+          "median": 0.557797223
+        },
+        "durations": [
+          {
+            "duration": 0.557797223,
+            "location": "EndToEndDeployment.feature:45"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "Select Environment Name as \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Select Environment Name as \"Environment Name\"",
+        "aggregatedDurations": {
+          "average": 0.73731311,
+          "median": 0.73731311
+        },
+        "durations": [
+          {
+            "duration": 0.73731311,
+            "location": "EndToEndDeployment.feature:23"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click On Select Key Pair$",
+    "steps": [
+      {
+        "name": "Click On Select Key Pair",
+        "aggregatedDurations": {
+          "average": 0.564252232,
+          "median": 0.564252232
+        },
+        "durations": [
+          {
+            "duration": 0.564252232,
+            "location": "EndToEndDeployment.feature:28"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select WebServer Checkbox$",
+    "steps": [
+      {
+        "name": "Select WebServer Checkbox",
+        "aggregatedDurations": {
+          "average": 0.393017864,
+          "median": 0.393017864
+        },
+        "durations": [
+          {
+            "duration": 0.393017864,
+            "location": "EndToEndDeployment.feature:31"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Verify whether Describe Needs page is getting displayed or not$",
+    "steps": [
+      {
+        "name": "Verify whether Describe Needs page is getting displayed or not",
+        "aggregatedDurations": {
+          "average": 0.471775906,
+          "median": 0.471775906
+        },
+        "durations": [
+          {
+            "duration": 0.471775906,
+            "location": "EndToEndDeployment.feature:17"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select Webserver Type as \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Select Webserver Type as \"Yes\"",
+        "aggregatedDurations": {
+          "average": 0.362958493,
+          "median": 0.362958493
+        },
+        "durations": [
+          {
+            "duration": 0.362958493,
+            "location": "EndToEndDeployment.feature:32"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Verify whether Login page is correctly opened or not$",
+    "steps": [
+      {
+        "name": "Verify whether Login page is correctly opened or not",
+        "aggregatedDurations": {
+          "average": 0.169331735,
+          "median": 0.169331735
+        },
+        "durations": [
+          {
+            "duration": 0.169331735,
+            "location": "EndToEndDeployment.feature:8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select Security Group Checkbox$",
+    "steps": [
+      {
+        "name": "Select Security Group Checkbox",
+        "aggregatedDurations": {
+          "average": 0.406357248,
+          "median": 0.406357248
+        },
+        "durations": [
+          {
+            "duration": 0.406357248,
+            "location": "EndToEndDeployment.feature:48"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click on End To End Deployment$",
+    "steps": [
+      {
+        "name": "Click on End To End Deployment",
+        "aggregatedDurations": {
+          "average": 10.588520312,
+          "median": 10.588520312
+        },
+        "durations": [
+          {
+            "duration": 10.588520312,
+            "location": "EndToEndDeployment.feature:14"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Enter Value in Filter Navigation Field Text Box \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Enter Value in Filter Navigation Field Text Box \"Order Guides\"",
+        "aggregatedDurations": {
+          "average": 0.690665041,
+          "median": 0.690665041
+        },
+        "durations": [
+          {
+            "duration": 0.690665041,
+            "location": "EndToEndDeployment.feature:11"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Select Database Type as \"([^\"]*)\"$",
+    "steps": [
+      {
+        "name": "Select Database Type as \"Yes\"",
+        "aggregatedDurations": {
+          "average": 0.343843215,
+          "median": 0.343843215
+        },
+        "durations": [
+          {
+            "duration": 0.343843215,
+            "location": "EndToEndDeployment.feature:36"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Switch to MainFrame$",
+    "steps": [
+      {
+        "name": "Switch to MainFrame",
+        "aggregatedDurations": {
+          "average": 0.308135912,
+          "median": 0.308404384
+        },
+        "durations": [
+          {
+            "duration": 0.214022005,
+            "location": "EndToEndDeployment.feature:7"
+          },
+          {
+            "duration": 0.392685578,
+            "location": "EndToEndDeployment.feature:13"
+          },
+          {
+            "duration": 0.326373122,
+            "location": "EndToEndDeployment.feature:20"
+          },
+          {
+            "duration": 0.296316317,
+            "location": "EndToEndDeployment.feature:26"
+          },
+          {
+            "duration": 0.295218957,
+            "location": "EndToEndDeployment.feature:30"
+          },
+          {
+            "duration": 0.308404384,
+            "location": "EndToEndDeployment.feature:42"
+          },
+          {
+            "duration": 0.338869599,
+            "location": "EndToEndDeployment.feature:47"
+          },
+          {
+            "duration": 0.271343462,
+            "location": "EndToEndDeployment.feature:51"
+          },
+          {
+            "duration": 0.329989792,
+            "location": "EndToEndDeployment.feature:54"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "source": "^Click On Cloud Platform$",
+    "steps": [
+      {
+        "name": "Click On Cloud Platform",
+        "aggregatedDurations": {
+          "average": 1.041304961,
+          "median": 1.041304961
+        },
+        "durations": [
+          {
+            "duration": 1.041304961,
+            "location": "EndToEndDeployment.feature:24"
+          }
+        ]
+      }
+    ]
+  }
+]
